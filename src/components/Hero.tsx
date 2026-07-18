@@ -7,7 +7,7 @@ import { profile } from "@/data/resume";
 
 const stats = [
   { label: "Years experience", value: profile.yearsExperience },
-  { label: "Projects delivered", value: "5+" },
+  { label: "Projects delivered", value: "20+" },
   { label: "Systems", value: "Enterprise" },
 ];
 
@@ -122,7 +122,7 @@ export default function Hero() {
         >
           <div
             aria-hidden
-            className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-accent-soft/10 to-transparent blur-2xl"
+            className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent/30 via-accent-soft/10 to-transparent blur-2xl"
           />
           <div className="relative aspect-square overflow-hidden rounded-[1.75rem] border border-border bg-surface shadow-2xl">
             <Image
