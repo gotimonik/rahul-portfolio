@@ -8,7 +8,6 @@ export default function Footer() {
         <p>
           © {year} {profile.name}. All rights reserved.
         </p>
-        <p className="font-mono">Built with Next.js &amp; TypeScript</p>
       </div>
     </footer>
   );
