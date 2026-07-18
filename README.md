@@ -25,6 +25,21 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 `public/profile.jpg` is currently a placeholder initials avatar. To use a real photo, replace that file (keep the same name `profile.jpg`, ideally a square image) — it'll automatically show up in the hero and nav.
 
+The browser tab icon (`src/app/favicon.ico`) is also generated from this photo. If you swap in a real photo, regenerate the favicon from it too:
+
+```bash
+python3 -c "
+from PIL import Image
+img = Image.open('public/profile.jpg').convert('RGB')
+w, h = img.size
+side = min(w, h)
+img = img.crop(((w-side)//2, (h-side)//2, (w-side)//2+side, (h-side)//2+side))
+img.save('src/app/favicon.ico', sizes=[(16,16),(32,32),(48,48),(64,64),(128,128),(256,256)])
+"
+```
+
+(Requires Pillow: `pip install pillow`.)
+
 ## Theming
 
 Theme switching is powered by `next-themes`. The toggle button lives in the nav (top right) and persists the user's choice across visits. Color tokens for both themes are defined in `globals.css` under `.dark` and `.light`.
