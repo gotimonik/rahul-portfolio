@@ -16,6 +16,13 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
+const initials = profile.name
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
+  .slice(0, 2)
+  .toUpperCase();
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +48,7 @@ export default function Nav() {
             <Image src={profile.photo} alt={profile.name} fill sizes="32px" className="object-cover" />
           </span>
           <span className="font-mono text-sm font-semibold tracking-tight text-foreground">
-            MG<span className="text-accent">.</span>
+            {initials}<span className="text-accent">.</span>
           </span>
         </a>
 
