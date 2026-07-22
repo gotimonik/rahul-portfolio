@@ -1,3 +1,19 @@
+export type NavLink = {
+  href: string;
+  label: string;
+};
+
+export const navLinks: NavLink[] = [
+  { href: "#about", label: "About" },
+  { href: "#specializations", label: "Focus" },
+  { href: "#approach", label: "Approach" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" },
+];
+
 export const profile = {
   name: "Rahul Goti",
   title: "Senior Java Developer",

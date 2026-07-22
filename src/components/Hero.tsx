@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download, MapPin, Briefcase } from "lucide-react";
 import { profile } from "@/data/resume";
+import { heroItem, heroMedia } from "@/lib/motion";
 
 const stats = [
   { label: "Years experience", value: profile.yearsExperience },
@@ -17,45 +18,45 @@ export default function Hero() {
       <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            variants={heroItem(0)}
+            initial="hidden"
+            animate="visible"
             className="font-mono text-sm text-accent"
           >
             Hi, I&apos;m
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
+            variants={heroItem(0.05)}
+            initial="hidden"
+            animate="visible"
             className="gradient-text mt-3 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           >
             {profile.name}
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            variants={heroItem(0.1)}
+            initial="hidden"
+            animate="visible"
             className="mt-4 text-xl font-medium text-muted sm:text-2xl"
           >
             {profile.title}
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            variants={heroItem(0.15)}
+            initial="hidden"
+            animate="visible"
             className="mt-2 font-mono text-sm text-accent-soft"
           >
             {profile.subtitle}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.18 }}
+            variants={heroItem(0.18)}
+            initial="hidden"
+            animate="visible"
             className="mt-4 flex items-center gap-1.5 text-sm text-muted"
           >
             <MapPin className="h-4 w-4 text-accent" />
@@ -63,18 +64,18 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={heroItem(0.2)}
+            initial="hidden"
+            animate="visible"
             className="mt-6 max-w-2xl text-base leading-relaxed text-muted"
           >
             {profile.summary}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            variants={heroItem(0.25)}
+            initial="hidden"
+            animate="visible"
             className="mt-8 flex flex-wrap gap-4"
           >
             <a
@@ -100,9 +101,9 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={heroItem(0.3)}
+            initial="hidden"
+            animate="visible"
             className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8"
           >
             {stats.map((stat) => (
@@ -115,9 +116,9 @@ export default function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          variants={heroMedia(0.15)}
+          initial="hidden"
+          animate="visible"
           className="relative mx-auto w-full max-w-xs lg:max-w-sm"
         >
           <div

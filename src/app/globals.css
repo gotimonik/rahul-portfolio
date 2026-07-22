@@ -52,6 +52,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* Reserve the scrollbar's width up front so toggling `overflow: hidden`
+     (e.g. while the Preloader is locking scroll) never changes the
+     viewport width — without this, the scrollbar popping back in once
+     the intro finishes causes a brief horizontal layout shift. */
+  scrollbar-gutter: stable;
 }
 
 body {
